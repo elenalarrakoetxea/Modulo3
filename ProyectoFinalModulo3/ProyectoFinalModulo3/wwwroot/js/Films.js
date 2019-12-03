@@ -14,9 +14,7 @@ function EncontrarVideo(imagen) {
         if (arrayOfArrays[i].Image == imagen.src) {
             return arrayOfArrays[i];
         }
-        else {
-            return imagen;
-        }
+     
     }
 }
 
