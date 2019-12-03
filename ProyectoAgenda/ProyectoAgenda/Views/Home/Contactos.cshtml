@@ -1,0 +1,40 @@
+﻿@model AgendaContactoViewModel
+@{
+    ViewData["Title"] = "Contactos";
+}
+
+<h1>Contactos</h1>
+<div class="card w-75 mx-auto " id="container">
+    <div class="card-body ">
+        <h5 class="card-title text-center">@Model.Agenda.Propietario</h5>
+        <p class="card-text">Fecha de creación: @Model.Agenda.FechaCreacion.ToShortDateString()</p>
+        <p class="card-text">Cantidad de contactos: @Model.Contactos.Count</p>
+    </div>
+</div>
+<div class="row mx-auto my-1 w-75">
+
+    <div class="card-deck row">
+    
+        <div>
+            @foreach (Contacto contacto in Model.Contactos)
+            {
+
+            <div class="card col-3 text-center m-auto contacto">
+                <img src="@Url.Content(contacto.Imagen)" class="card-img-top rounded mx-auto d-block imagen">
+                <div class="card-body">
+                    <h5 class="card-title">@contacto.Nombre</h5>
+                    <div class="contacto-text">
+
+                        <p class="card-text">@contacto.Apellido</p>
+                        <p class="card-text">Teléfono: @contacto.Telefono</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+
+            }
+           
+        </div>
+    
+     </div> 
+</div>

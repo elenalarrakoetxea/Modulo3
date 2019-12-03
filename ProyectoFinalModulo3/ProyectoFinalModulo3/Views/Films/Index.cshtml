@@ -1,0 +1,116 @@
+﻿@using Newtonsoft.Json;
+@model ProyectoFinalModulo3.Models.FilmGenreVM
+@*<h1>Index</h1>*@
+
+@*<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+*@
+@*@{
+    int i = 0;
+    }*@
+
+<script type="text/javascript">
+  var arrayOfArrays = @Html.Raw(Json.Serialize(Model.Peliculas));
+</script>
+<div class="col-12 contenidoFilms">
+
+    <div class="row peliculasIndex">
+
+        @{
+            foreach (Film film in Model.Peliculas)
+            {
+                if (film.Premiere && film.RecommendedAge >= 12)
+                {
+                    <div class="my-Video active col-12">
+                        <video class="d-block w-100 my-Video miVideo" autoplay loop muted>
+                            <source src=@Url.Content(film.Video) type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="rounded-circle sonido"><i class="fas fa-microphone-alt"></i></div>
+                    <div class="informacionPremiere">
+                        <h2>@film.Title</h2>
+                        <p>@film.Synopsis</p>
+                    </div>
+                }
+            }
+        }
+    </div>
+    @{
+
+        int contador = 0;
+    }
+    @foreach (String genero in Model.Generos)
+    {
+        contador = 0;
+
+        <div class="row filaPeliculas">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-2  tituloGenero">
+                        <div class="row titulo">
+                            <h6>@genero</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row no-gutters">
+                    <div class="col-1">
+                        <div class="row h-100">
+                            <div class="col-3 offset-9 controles">
+                                <i class="fas fa-angle-left"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    @foreach (Film pelicula in Model.Peliculas)
+                    {
+
+                        if (pelicula.Genre == genero)
+                        {
+                            if (contador < 5)
+                            {
+                                contador++;
+                                <div class="cartaPelicula col-12 col-md-2">
+                                    <img src="@Url.Content(pelicula.Image)" alt="@pelicula.Title" class="imagenPeli">
+                                </div>
+                            }
+
+                        }
+                    }
+                    <div class="col-1">
+                        <div class="row h-100">
+                            <div class="col-3 controles">
+                                <i class="fas fa-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>*@
+
+            </div>
+        </div>
+    }
+
+</div>
+
+@section Scripts{
+
+    <script src="~/js/Films.js"></script>
+}
+
+
+
+
+

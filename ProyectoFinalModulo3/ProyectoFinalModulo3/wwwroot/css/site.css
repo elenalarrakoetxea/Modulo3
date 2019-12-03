@@ -1,0 +1,414 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+/* PAGINA DE INICIO*/
+* :root {
+    --primary-color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+#header-Contenido {
+    height: 0px;
+}
+
+.navbar {
+    height: 7%;
+    padding: 2%;
+}
+
+
+.salir {
+    margin-bottom: 2%;
+}
+
+.clear {
+    clear: both;
+}
+
+
+.logo {
+    width: 100px;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    width: 100%;
+    /*position: relative;*/
+    background: url(../Imagenes/ImagenFondoNetflix.jpg) no-repeat center;
+}
+
+.cabeceraPrincipal {
+    height: 0px;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.6);
+    z-index: -1;
+}
+
+#main-hall-top {
+    margin-top: 15%;
+    z-index: 1;
+}
+
+    #main-hall-top h1 {
+        font-size: 4em;
+    }
+
+#main-hall-btn a, #main-hall-bottom h5 {
+    font-size: 1.5rem;
+    font-variant: small-caps;
+}
+
+#main-hall-btn .btn {
+    padding: 2%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+/*.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*white-space: nowrap;
+     Set the fixed height of the footer here 
+    height: 10px;
+    line-height: 60px;  Vertically center the text there 
+}*/
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+}
+
+.btn {
+    color: white;
+}
+
+.cajaRegistrate {
+    text-align: center;
+    background-color: red;
+}
+
+.cajaCancela {
+    text-align: center;
+}
+
+#main-hall-bottom, #main-hall-btn, .container {
+    z-index: 1;
+}
+
+.row {
+    margin: 0;
+}
+
+
+
+/*PAGINA DE ENTRADA DE USUARIO*/
+
+.LoginUser {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 8%;
+    padding: 2%;
+    border-radius: 5%;
+    background-color: rgba(0,0,0,0.7);
+    color: antiquewhite;
+    text-align: center;
+}
+
+section {
+    width: 100%;
+}
+
+.LoginUser form {
+    z-index: 1;
+}
+
+.LoginUser .excepcion {
+    text-align: left;
+}
+
+.registerLogin {
+    text-align: center;
+}
+
+
+/*PAGINA DE REGISTRO USUARIO*/
+.registerUser {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 2%;
+    border-radius: 5%;
+    background-color: rgba(0,0,0,0.7);
+    color: antiquewhite;
+}
+
+    .registerUser .barraDatos {
+        width: 43%;
+        float: left;
+        margin: 2%;
+    }
+
+.entrar button {
+    width: 40%;
+}
+
+.entrar p {
+    font-size: 15px;
+}
+
+.registerLogin a {
+    color: antiquewhite;
+    font-size: 20px;
+}
+
+
+
+/*PAGINA DE CONTENIDO PRINCIPAL*/
+.cContenido {
+    max-width: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.nContenido {
+    background-color: transparent;
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+}
+
+.contenidoCompleto {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 60px;
+    margin:0;
+}
+
+.contenidoFilms {
+    width: 100%;
+    background: #141414;
+    /*background: linear-gradient(top, black, grey);*/
+    padding: 0;
+}
+
+.peliculasIndex {
+    width: 100%;
+    /*background-color: rgba(20, 20, 20, 0.842);*/
+}
+
+.container {
+    width: 100%;
+    /*background-color: #212529;*/
+}
+
+.busqueda {
+    margin-right: 0;
+    padding: 0;
+}
+
+.generopelicula {
+    position: relative;
+    bottom: 100px;
+    margin: 40px 0;
+}
+
+.listaPeliculas {
+    background-color: transparent;
+}
+
+.fichapeli, .fichapeliSearch {
+    width: 200px;
+    height: 112.5px;
+    padding: 0;
+    border: 0;
+}
+
+
+.FYCFTitle {
+    padding: 2px;
+}
+
+.cFYCF, .cFYCFsearch {
+    float: left;
+    width: 200px;
+    height: 112.5px;
+    padding: 0;
+    background-color: transparent;
+}
+
+.imagen {
+    width: 100%;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+.fichapeli {
+    width: 200px;
+    height: 150px;
+    margin: 0;
+    background-color: transparent;
+}
+
+.my-Video {
+    padding: 0;
+}
+
+.barrabuscar {
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.form-inline:hover .barrabuscar {
+    opacity: 1;
+}
+
+.buscadorFilms {
+    position: relative;
+    top: 200px;
+    margin-left: 88px;
+    margin-right: 88px;
+}
+
+/*/trailer*/
+
+iframe {
+    position: relative;
+    bottom: 100px;
+    right: 50px;
+    z-index: 1;
+}
+
+.sonido {
+    color: darkslategray;
+    width: 3vw;
+    height: 3vw;
+    position: relative;
+    bottom: 11vw;
+    left: 92vw;
+    text-align: center;
+    background-color: black;
+    opacity: 0.5;
+    font-size: 2vw;
+    border: solid 1px;
+    border-color: white;
+    /*line-height: 1rem;*/
+}
+.cartaPelicula{
+    height: 100%;
+}
+.cartaPelicula img{
+    height: 140px;
+}
+.filaPeliculas::after {
+    content: '';
+    position: fixed;
+    background: rgba(0,0,0, 0.6);
+    z-index: -1;
+}
+.filaPeliculas{
+    position: relative;
+    bottom: 18%;
+}
+
+.tituloGenero {
+    margin: 1%;
+    margin-left: 8%;
+    position: relative;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: solid 1px;
+    border-color: rgba(255, 255, 255, 0.33);
+}
+
+.titulo {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    margin: 0 auto;
+}
+.titulo h6{
+    margin: 0;
+}
+.controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-color: rgba(0,0,0,0.4);*/
+  
+    color: white;
+ 
+}
+.controles i{
+    font-size: 2rem;
+    opacity : 0.5;
+}
+.informacionPremiere h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 200%;
+    width: fit-content;
+    color: darkgray;
+    margin-left: 4%;
+}
+.informacionPremiere p {
+    font-size: 80%;
+    /* width: 20%; */
+    background-color: rgba(0,0,0,0.4);
+    max-width: 30%;
+    /* border-radius: 5%; */
+    padding: 1.2%;
+    /* text-align: center; */
+    color: white;
+    opacity: 0.7;
+}
+.informacionPremiere {
+    width: fit-content;
+
+    position: relative;
+    bottom: 26vw;
+}

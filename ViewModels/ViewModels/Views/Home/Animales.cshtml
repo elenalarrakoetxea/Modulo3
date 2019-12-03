@@ -1,0 +1,38 @@
+﻿@model  FamiliaAnimalViewModel
+@{
+    ViewData["Title"] = "Animales";
+}
+
+<h1>@Model.Familia.Nombre</h1>
+<table>
+    <thead class="table table-hover table-dark ">
+        <tr>
+            <th>Nombre</th>
+            <th>NombreCientifico</th>
+            <th>imagen</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            foreach (Animal animal in Model.Animales)
+            {
+                <tr>
+                    <td>@animal.Nombre</td>
+                    <td>@animal.NombreCientífico</td>
+                    <td>@animal.Imagen</td>       
+                </tr>
+            }
+        }
+
+
+
+
+    </tbody>
+
+
+
+
+
+</table>
+

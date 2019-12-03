@@ -1,0 +1,176 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+* :root {
+    --primary-color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/*.border-top {
+    border-top: 1px solid #e5e5e5;
+}*/
+
+/*.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}*/
+
+/*.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    width: 100%;
+    height: 99vh;
+    position: relative;
+    background: url(../Imagenes/ImagenFondoNetflix.jpg) no-repeat center;
+}
+header{
+    height:20px;
+}
+.clear{
+    clear:both;
+}
+
+
+.logo {
+    width: 100px;
+}
+img {
+    width: 100%;
+}
+  body::after{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0, 0.6);
+        z-index: -1;
+    }
+#main-hall-top {
+    margin-top: 15%;
+    z-index: 1;
+}
+
+#main-hall-top h1{
+    font-size: 4em;
+}
+    
+#main-hall-btn a, #main-hall-bottom h5 {
+    font-size: 1.5rem;
+    font-variant: small-caps;
+}
+
+#main-hall-btn .btn {
+    padding: 2%;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*white-space: nowrap;*/
+    /* Set the fixed height of the footer here */
+    height: 10px;
+    /*line-height: 60px;*/ /* Vertically center the text there */
+}
+
+
+    
+    /*#hall-top .btn-red {
+        background-color: red;
+        border-radius: 5px;
+        margin-top: 5%;
+    }*/
+
+.btn-red {
+    background-color: red;
+    color: white;
+}
+
+.btn {
+    color: white;
+}
+
+
+#main-hall-bottom, #main-hall-btn, .container {
+    z-index: 1;
+}
+
+.row {
+    margin: 0;
+}
+.mimodal{
+    z-index: 2000;
+}
+
+
+
+
+
+/*CREATEUSERS*/
+.UserValidation{
+    width:30%;
+    margin: 0 auto;
+    margin-top:15%;
+   padding: 2%;
+   border-radius:5%;
+   background-color: rgba(0,0,0,0.7);
+   
+    color:antiquewhite;
+  
+}
+.formulario .UserValidation{
+    z-index:1;
+}
+
+.createUser {
+    width:30%;
+    height: 40%;
+    margin: 0 auto;
+    margin-top: 7%;
+    padding: 2%;
+    border-radius: 5%;
+    background-color: rgba(0,0,0,0.7);
+    color: antiquewhite;
+}
+.backToList a{
+    color:antiquewhite;
+}

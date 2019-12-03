@@ -1,0 +1,29 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<ul class="navbar-nav buscador align-content-center">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item busqueda">
+        <form class="form-inline my-2 my-md-0" asp-controller="Films" asp-action="SearchFilm">
+            <input class="form-control bg-dark border-dark text-light  mr-sm-2 barrabuscar" type="search" name="nombre" placeholder="Buscar..." aria-label="Search">
+            <button class="btn border-dark my-2 my-sm-0 botonLupa" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </li>
+    <li class="nav-item  my-2 my-md-0 salir " >
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="btn border-dark my-2 my-sm-0">Salir</button>
+        </form>
+    </li>
+}
+else
+{
+    @*<li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>  ESTO VA EN EL LAYOUT*@
+    <li class="nav-item">
+        <a class="btn btn-red" role="button" asp-area="Identity" asp-page="/Account/Login">Iniciar Sesion</a>
+    </li>
+}
+</ul>

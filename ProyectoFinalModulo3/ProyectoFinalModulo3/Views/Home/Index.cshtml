@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> _userManager
+@*@{
+        ViewData["Title"] = "Home Page";
+    }*@
+
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="col-12">
+        <div class="row" id="main-hall-top">
+            <div class="col-6 offset-3  col-md-8 offset-md-2  d-flex justify-content-center" id=" main-hall-slogan">
+                <h1>
+                    Disfruta del mejor cine.
+                </h1>
+            </div>
+        </div>
+
+        <div class="row" id="main-hall-bottom">
+            <div class="col-4 offset-4  col-md-6 offset-md-3 cajaCancela">
+                <h5>
+                    Regístrate. Cancela cuando quieras.
+                </h5>
+            </div>
+        </div>
+
+        <div class="row " id="main-hall-btn">
+            <div class="col-2 offset-5 col-md-4 offset-md-4 cajaRegistrate">
+
+                <a class="btn btn-red " role="button" asp-area="Identity" asp-page="/Account/Register">
+                    RESGÍSTRATE <i class="fas fa-angle-right"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+

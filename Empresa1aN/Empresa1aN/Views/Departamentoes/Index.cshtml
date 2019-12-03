@@ -1,0 +1,128 @@
+﻿@model DepartamentoEmpleadosViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="dropdown">
+    <button class="btn btn-outline-info btn-sm  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Departamentos
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" asp-area="" asp-controller="Departamentoes" asp-action="Index" asp-route-id="">General</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Departamentoes" asp-action="Index" asp-route-id="1">Ventas</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Departamentoes" asp-action="Index" asp-route-id="2">Recursos Humanos</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Departamentoes" asp-action="Index" asp-route-id="3">I+D</a>
+    </div>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="nombre">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+</div>
+@*@if (Model.Id == 0)
+{
+    <div>
+        <h1>Empleados</h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellido
+                </th>
+                <th>
+                    Teléfono
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => empleado.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => empleado.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => empleado.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => empleado.Email)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@empleado.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@empleado.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@empleado.Id">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+}*@
+@foreach (Departamento departamento in Model.Departamentos)
+{
+    <div>
+        <h1>@departamento.Nombre</h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellido
+                </th>
+                <th>
+                    Teléfono
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Empleado empleado in Model.Empleados)
+            {
+                if (empleado.DepartamentoId == Model.Id)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => empleado.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => empleado.Apellido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => empleado.Telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => empleado.Email)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@empleado.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@empleado.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@empleado.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+}

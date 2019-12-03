@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ProyectoFinalModulo3.Models.Film>
+
+
+
+<div class="col-12 buscadorFilms">
+    <div class="row generopelicula">
+        <div class="tycFYCF col-lg-12">
+            <h2 class="row FYCFTitle">Películas encontradas...</h2>
+            <div class="row listaPeliculas">
+                @{
+
+                    foreach (Film film in Model)
+                    {
+                        <div class="list-group-item fichapeliSearch col-lg-2 col-md-3 col-sm-4">
+                            <a>
+                                <div class=" cFYCFsearch ">
+                                    <img class=" imagen " src=@Url.Content(film.Image) title="@film.Title">
+                                </div>
+                            </a>
+                        </div>
+
+                    }
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
