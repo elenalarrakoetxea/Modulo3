@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using ProyectoFinalModulo3.Models;
+using ProyectoFinalModulo3.Services;
 
 namespace ProyectoFinalModulo3.Areas.Identity.Pages.Account
 {
@@ -18,11 +19,13 @@ namespace ProyectoFinalModulo3.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly IFilm _filmServices;
 
-        public LoginModel(SignInManager<AppUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<AppUser> signInManager, ILogger<LoginModel> logger, IFilm filmServices)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _filmServices = filmServices;
         }
 
         [BindProperty]
@@ -55,9 +58,8 @@ namespace ProyectoFinalModulo3.Areas.Identity.Pages.Account
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
             }
-
             returnUrl = returnUrl ?? Url.Content("~/");
-
+        
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
@@ -65,7 +67,7 @@ namespace ProyectoFinalModulo3.Areas.Identity.Pages.Account
 
             ReturnUrl = returnUrl;
         }
-
+     
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/Films");

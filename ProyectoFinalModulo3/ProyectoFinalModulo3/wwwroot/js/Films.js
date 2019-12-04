@@ -74,7 +74,7 @@ let imagenes = document.getElementsByClassName('imagenPeli');
 for (let i = 0; i < imagenes.length; i++) {
     imagenes[i].addEventListener('mouseover', function () {
 
-        console.log(EncontrarVideo(imagenes[i]));
+        imagenes[i].remove();
 
     })
 }
